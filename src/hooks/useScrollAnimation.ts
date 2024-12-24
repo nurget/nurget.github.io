@@ -1,8 +1,11 @@
 import { useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
 
+type OffsetValue = "start" | "center" | "end" | `${number}%` | `${number}px`;
+type ScrollOffset = [OffsetValue, OffsetValue];
+
 interface ScrollAnimationConfig {
-    offset?: [string, string];
+    offset?: ScrollOffset;
     inputRange?: number[];
     outputRange?: number[];
 }
@@ -11,7 +14,7 @@ export const useScrollAnimation = (config: ScrollAnimationConfig = {}) => {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
         target: ref,
-        offset: config.offset || ["start end", "end start"]
+        offset: config.offset || ["start", "end"]
     });
 
     const opacity = useTransform(

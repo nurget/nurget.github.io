@@ -3,7 +3,6 @@ import { Section } from '../layout/Section';
 import { useContactForm } from '../../hooks/useContactForm';
 import {Mail, Phone, MapPin, Loader2, CheckCircle, AlertCircle, Github, BookOpen} from 'lucide-react';
 import { useForm } from 'react-hook-form';
-import React from "react";
 
 interface ContactFormData {
     name: string;

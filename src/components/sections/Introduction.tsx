@@ -1,20 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Section } from '../layout/Section';
 import { useRef } from 'react';
-import { Github, Mail } from 'lucide-react';
-
-// 타이핑 효과를 위한 애니메이션 변수
-const typingVariants = {
-    hidden: { width: '0%' },
-    visible: {
-        width: '100%',
-        transition: {
-            duration: 1,
-            delay: 0.5,
-            ease: 'easeOut'
-        }
-    }
-};
 
 // 텍스트 페이드인 효과
 const fadeInUp = {
@@ -149,7 +135,7 @@ export const Introduction = () => {
                         className="flex flex-col md:flex-row gap-6 items-center"
                     >
                         <div className="flex gap-4">
-                            <a
+                            <motion.a
                                 href="#portfolio"
                                 variants={buttonHover}
                                 whileHover="hover"
@@ -157,8 +143,8 @@ export const Introduction = () => {
                                 className="px-8 py-4 bg-black text-white rounded-lg font-medium shadow-lg shadow-primary-200 hover:shadow-xl hover:shadow-primary-200 transition-shadow"
                             >
                                 포트폴리오 보기
-                            </a>
-                            <a
+                            </motion.a>
+                            <motion.a
                                 href="#contact"
                                 variants={buttonHover}
                                 whileHover="hover"
@@ -166,7 +152,7 @@ export const Introduction = () => {
                                 className="px-8 py-4 border-2 border-primary-600 text-primary-600 rounded-lg font-medium hover:bg-primary-50 transition-colors"
                             >
                                 연락하기
-                            </a>
+                            </motion.a>
                         </div>
                     </motion.div>
                 </motion.div>
