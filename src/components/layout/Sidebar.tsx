@@ -34,7 +34,7 @@ export const Sidebar = ({ isOpen, onClose }: SidebarProps) => {
                     }
                 })
             },
-            { threshold: 0.2 }
+            { threshold: 0.3 }
         )
 
         document.querySelectorAll('section[id]').forEach((section) => {

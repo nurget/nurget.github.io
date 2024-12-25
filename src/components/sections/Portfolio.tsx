@@ -104,10 +104,7 @@ const ImageGallery = ({ images, currentIndex, onClose, onPrevious, onNext }: Ima
 const ProjectCard = ({ project, index }: { project: typeof PROJECTS[0]; index: number }) => {
     const [isGalleryOpen, setIsGalleryOpen] = useState(false);
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
-    const { ref, opacity, y } = useScrollAnimation({
-        offset: ["start", "end"],
-        inputRange: [0, 0.3, 0.7, 1],
-    });
+    const { ref, opacity, y } = useScrollAnimation();
 
     const thumbnail = useProgressiveImage(project.thumbnail);
 
